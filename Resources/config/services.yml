@@ -1,0 +1,4 @@
+services:
+#    surveys_ssc2016.example:
+#        class: Surveys\SSC2016Bundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

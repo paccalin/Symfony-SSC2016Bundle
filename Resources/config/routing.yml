@@ -1,0 +1,9 @@
+surveys_ssc2016_homepage:
+    path: /
+    defaults: 
+        _controller: SurveysSSC2016Bundle:Survey:index
+
+surveys_ssc2016_form:
+    path: /SSC2016/form
+    defaults: 
+        _controller: SurveysSSC2016Bundle:Survey:form

@@ -1,0 +1,31 @@
+{# Formulaire relatif au service informatique #}
+
+<fieldset>
+	<h3> Service Informatique </h3>
+
+	<p>Êtes vous satisfait de la réactivité de l'équipe d'assistance du service informatique</p>
+	{% set answerName = 'it-responsiveness' %}
+	{{ include("SurveysSSC2016Bundle:Survey:satisfactionAnswers-fr.html.twig") }}
+
+	<p>Êtes vous satisfait de la courtoisie et de l'attitude des membres du service informatique</p>
+	{% set answerName = 'it-courtesy' %}
+	{{ include("SurveysSSC2016Bundle:Survey:satisfactionAnswers-fr.html.twig") }}
+
+	<p>Êtes vous satisfait des premières solutions apportée à vos problèmes par le service informatique?</p>
+	{% set answerName = 'it-solutions' %}
+	{{ include("SurveysSSC2016Bundle:Survey:satisfactionAnswers-fr.html.twig") }}
+
+	<p>Êtes vous généralement satisfaits du fonctionnement de la gestion des problèmes que vous avez fait remonter au service informatique?</p>
+	{% set answerName = 'it-solutions' %}
+	{{ include("SurveysSSC2016Bundle:Survey:satisfactionAnswers-fr.html.twig") }}
+
+	<p>Êtes vous globalement satisfaits de l'aide apportée par le service informatique?</p>
+	{% set answerName = 'it-global' %}
+	{{ include("SurveysSSC2016Bundle:Survey:satisfactionAnswers-fr.html.twig") }}
+
+	<p>De quelle manière, selon vous, le service informatique pourrais améliorer sa manière de vous porter assistance?</p>
+	<textarea name="it-improve" placeholder="Address"></textarea>
+
+
+
+</fieldset>
