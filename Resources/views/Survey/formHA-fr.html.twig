@@ -1,7 +1,8 @@
 {# Formulaire relatif au sercice d'achat #}
 
 <fieldset>
-	<h3> Service Achat </h3>
+	<h3> Service des Achats </h3>
+	</br><div class="separator"></div></br>
 
 	<p>Êtes-vous satisfait de l'implication du service achat dans le processus d'appel d'offre sur CER, Consommable, Prestation?</p>
 	{% set answerName = 'ha-appelOffre' %}
@@ -23,7 +24,6 @@
 	{% set answerName = 'ha-infoFournisseur' %}
 	{{ include("SurveysSSC2016Bundle:Survey:admittanceLevelsAnswers-fr.html.twig") }}
 
-	<input type="button" name="previous" class="previous action-button" value="Précédent" />
-	<input type="button" name="next" class="next action-button" value="Suivant" />
-
+		<input type="button" name="previous" class="previous action-button" value="Précédent" />
+		<input type="button" name="next" class="next action-button" value="Suivant" />
 </fieldset>

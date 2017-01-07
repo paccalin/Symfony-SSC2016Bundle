@@ -1,11 +1,18 @@
 {# Eléments de réponce suite à une question sur l'affirmation (nécéssite la variable "answerName") #}
 
-<input type="radio" name="{{ answerName }}" value="yesDefinitly">Oui, totalement<br><br>
+<input type="radio" name="{{ answerName }}" value="3" id ="{{ answerName ~ "1"}}"/>
+<label class="radio" for="{{ answerName ~ "1"}}">Oui, totalement</label>
 
-<input type="radio" name="{{ answerName }}" value="yesSomewhat">Oui, à peu près<br><br>
+<input type="radio" name="{{ answerName }}" value="2" id ="{{ answerName ~ "2"}}"/>
+<label class="radio" for="{{ answerName ~ "2"}}">Oui, à peu près</label>
 
-<input type="radio" name="{{ answerName }}" value="notReally">Non, pas vraiment<br><br>
+<input type="radio" name="{{ answerName }}" value="1" id ="{{ answerName ~ "3"}}"/>
+<label class="radio" for="{{ answerName ~ "3"}}">Non, pas vraiment</label>
 
-<input type="radio" name="{{ answerName }}" value="notAtAll">Non, pas du tout<br><br>
+<input type="radio" name="{{ answerName }}" value="0" id ="{{ answerName ~ "4"}}"/>
+<label class="radio" for="{{ answerName ~ "4"}}">Non, pas du tout</label>
 
-<input type="radio" name="{{ answerName }}" value="noOpinion">Pas d'avis<br><br>
+<input type="radio" name="{{ answerName }}" value="-1" id ="{{ answerName ~ "5"}}"/>
+<label class="radio" for="{{ answerName ~ "5"}}">Pas d'avis</label>
+
+</br></br></br><div class="separator"></div></br>

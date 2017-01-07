@@ -1,11 +1,18 @@
 {# Eléments de réponce suite à une question sur la satisfaction (nécéssite la variable "answerName") #}
 
-<input type="radio" name="{{ answerName }}" value="verySatisfied">Très satisfait<br><br>
+<input type="radio" name="{{ answerName }}" value="3" id ="{{ answerName ~ "1"}}"/>
+<label class="radio" for="{{ answerName ~ "1"}}">Très satisfait</label>
 
-<input type="radio" name="{{ answerName }}" value="ratherSatisfied">Plutôt satisfait<br><br>
+<input type="radio" name="{{ answerName }}" value="2" id ="{{ answerName ~ "2"}}"/>
+<label class="radio" for="{{ answerName ~ "2"}}">Plutôt satisfait</label>
 
-<input type="radio" name="{{ answerName }}" value="ratherDissatisfied">Plutôt insatisfait<br><br>
+<input type="radio" name="{{ answerName }}" value="1" id ="{{ answerName ~ "3"}}"/>
+<label class="radio" for="{{ answerName ~ "3"}}">Plutôt insatisfait</label>
 
-<input type="radio" name="{{ answerName }}" value="veryDissatisfied">Très insatisfait<br><br>
+<input type="radio" name="{{ answerName }}" value="0" id ="{{ answerName ~ "4"}}"/>
+<label class="radio" for="{{ answerName ~ "4"}}">Très insatisfait</label>
 
-<input type="radio" name="{{ answerName }}" value="noOpinion">Pas d'avis<br><br>
+<input type="radio" name="{{ answerName }}" value="-1" id ="{{ answerName ~ "5"}}"/>
+<label class="radio" for="{{ answerName ~ "5"}}">Pas d'avis</label>
+
+</br></br></br><div class="separator"></div></br>
