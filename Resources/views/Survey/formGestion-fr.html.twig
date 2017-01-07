@@ -1,0 +1,25 @@
+{# Formulaire relatif au service Gestion #}
+
+<fieldset>
+	<h3> Service Gestion </h3>
+
+	<p>Connaissez-vous les missions et rôles du contrôle de gestion ?</p>
+	{% set answerName = 'gestion-mission' %}
+	{{ include("SurveysSSC2016Bundle:Survey:admittanceLevelsAnswers-fr.html.twig") }}
+
+	<p>Connaissez-vous ou savez-vous identifier votre interlocuteur en fonction de vos besoins ?</p>
+	{% set answerName = 'gestion-who' %}
+	{{ include("SurveysSSC2016Bundle:Survey:admittanceLevelsAnswers-fr.html.twig") }}
+
+	<p>Êtes-vous satisfait des réponses apportées à vos questions et besoins ?</p>
+	{% set answerName = 'gestion-answers' %}
+	{{ include("SurveysSSC2016Bundle:Survey:satisfactionAnswers-fr.html.twig") }}
+
+	<p>Êtes-vous suffisamment informés sur les règles et bonnes pratiques financières ?</p>
+	{% set answerName = 'gestion-global' %}
+	{{ include("SurveysSSC2016Bundle:Survey:admittanceLevelsAnswers-fr.html.twig") }}
+
+	<input type="button" name="previous" class="previous action-button" value="Précédent" />
+	<input type="submit" name="submit" class="submit action-button" value="Valider" />
+
+</fieldset>
