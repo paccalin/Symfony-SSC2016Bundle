@@ -1,6 +1,6 @@
 {
-    "name" : "Survey/SSC2016Bundle",
-    "description" : "bundle 'enquête SSC2016",
+    "name" : "survey/ssc2016Bundle",
+    "description" : "bundle d'enquête SSC2016",
     "type" : "symfony-bundle",
     "authors" : [{
         "name" : "Axe",
@@ -22,7 +22,7 @@
         {
             "type": "package",
             "package": {
-                "name": "Survey/SSC2016Bundle",
+                "name": "survey/ssc2016bundle",
                 "version": "dev-master",
                 "source": {
                     "url": "git://github.com/paccalin/Symfony-SSC2016Bundle.git",
