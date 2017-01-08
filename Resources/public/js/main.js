@@ -37,10 +37,4 @@ $( document ).ready(function() {
 		current_fs.hide();
 		window.scrollTo(0, 0);
 	});
-
-
-
-	$(".submit").click(function(){
-		return false;
-	})
 });

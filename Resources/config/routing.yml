@@ -7,3 +7,9 @@ surveys_ssc2016_form:
     path: /SSC2016/form
     defaults: 
         _controller: SurveysSSC2016Bundle:Survey:form
+
+surveys_ssc2016_submit:
+    path: /SSC2016/submit
+    defaults: 
+        _controller: SurveysSSC2016Bundle:Submit:index
+

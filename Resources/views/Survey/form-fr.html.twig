@@ -4,12 +4,12 @@
 {% block body %}
 	<h2>Enquête SSC 2016</h2>
 
-	<form id="sscForm">
-		{{ include("SurveysSSC2016Bundle:Survey:progressBar-fr.html.twig") }}
-		{{ include("SurveysSSC2016Bundle:Survey:formIT-fr.html.twig") }}
-		{{ include("SurveysSSC2016Bundle:Survey:formHA-fr.html.twig") }}
-		{{ include("SurveysSSC2016Bundle:Survey:formCompta-fr.html.twig") }}
-		{{ include("SurveysSSC2016Bundle:Survey:formGestion-fr.html.twig") }}
+	<form id='sscForm' method="post" action='{{ path('surveys_ssc2016_submit') }}'>
+		{{ include('SurveysSSC2016Bundle:Survey:progressBar-fr.html.twig') }}
+		{{ include('SurveysSSC2016Bundle:Survey:formIT-fr.html.twig') }}
+		{{ include('SurveysSSC2016Bundle:Survey:formHA-fr.html.twig') }}
+		{{ include('SurveysSSC2016Bundle:Survey:formCompta-fr.html.twig') }}
+		{{ include('SurveysSSC2016Bundle:Survey:formGestion-fr.html.twig') }}
 	</form>
 
 {% endblock %}
