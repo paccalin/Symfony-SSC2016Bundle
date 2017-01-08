@@ -7,12 +7,15 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Surveys\SSC2016Bundle\Entity\Results;
 
+/**
+ * Controller de gestion et enregistrement des résultats
+ */
 class SubmitController extends Controller
 {
 
 	/**
 	 * Confirmation ou infirmation de l'enregistrement des données à l'utilisateur
-     * Appel des méthodes de vérifications
+     * Appel des méthodes de vérifications et d'enregistrement
 	 *
 	 * @return     <Response>  ( Rendu d'une des pages' )
 	 */

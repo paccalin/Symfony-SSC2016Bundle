@@ -3,19 +3,22 @@
     "description" : "bundle d'enquête SSC2016",
     "type" : "symfony-bundle",
     "authors" : [{
-        "name" : "Axe",
+        "name" : "Axel Paccalin",
         "email" : "paccalin.axel@gmail.com"
     }],
+    "autoload": {
+        "psr-4": { "": "src/" },
+        "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
+    },
     "keywords" : [
         "SSC2016 bundle"
     ],
-    "require" : {
-        "php": "^5.6 || ^7.0"
-    },
-    "autoload" : {
-        "psr-0" : {
-            "Survey/SSC2016Bundle" : ""
-        }
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/symfony": "3.3.x-dev",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-cache-bundle": "^1.2"
     },
     "target-dir" : "Survey/SSC2016Bundle",
     "repositories": [

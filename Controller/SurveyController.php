@@ -3,7 +3,9 @@
 namespace Surveys\SSC2016Bundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+/**
+ * Controller de l'affichage du formulaire et de la page d'accueil
+ */
 class SurveyController extends Controller
 {
 

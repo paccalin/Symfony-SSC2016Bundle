@@ -17,7 +17,7 @@ Server-requirements:
 Compatibilité:
 --------------------------------
 * Firefox
-* Google chrome
+* Google chrom€
 * Opera
 * Microsoft Edge
 * Internet explorer

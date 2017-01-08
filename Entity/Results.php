@@ -807,10 +807,11 @@ class Results
         return $this->gestionGlobal;
     }
 
-    public function isfull(){
-
-    }
-
+    /**
+     * Détermine si le résultat est complet et valide
+     *
+     * @return     <bool>  ( Facteur de validité )
+     */
     public function isValid(){
         $properties = get_object_vars($this);
 
