@@ -4,12 +4,12 @@ surveys_ssc2016_homepage:
         _controller: SurveysSSC2016Bundle:Survey:index
 
 surveys_ssc2016_form:
-    path: /SSC2016/form
+    path: /form
     defaults: 
         _controller: SurveysSSC2016Bundle:Survey:form
 
 surveys_ssc2016_submit:
-    path: /SSC2016/submit
+    path: /submit
     defaults: 
         _controller: SurveysSSC2016Bundle:Submit:index
 

@@ -1,1 +1,23 @@
-pas ok ça ne marche pas
+{% extends "SurveysSSC2016Bundle::layout-fr.html.twig" %}
+
+
+{% block body %}
+	<div class="page">
+		<h2>Une erreur est survenue</h2>
+		{% if errorType == "missingFields" %}
+			<p>Une erreur est survenue lors de l'enregistrement de vos données:</br>
+				Certains champs sont manquants ou incorrects</p>
+		{% elseif errorType == "dbError" %}
+			<p>Une erreur est survenue lors de l'enregistrement de vos données:</br>
+			Erreur base de données. Merci de contacter le service informatique</p>
+		{% else %}
+			<p>Une erreur inconnue est survenue lors de l'enregistrement de vos données.</br> 
+			Merci de contacter le service informatique</p>
+		{% endif %}
+		
+		<form>
+			<input type="button" value="Réessayer" onclick="window.location.href='{{ path('surveys_ssc2016_form') }}'" />
+			<input type="button" value="Retour à l'accueil" onclick="window.location.href='{{ path('surveys_ssc2016_homepage') }}'" />
+		</form> 
+	</div>
+{% endblock %}

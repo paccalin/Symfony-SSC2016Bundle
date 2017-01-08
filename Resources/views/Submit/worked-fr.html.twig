@@ -1,1 +1,12 @@
-ok ça marche
+{% extends "SurveysSSC2016Bundle::layout-fr.html.twig" %}
+
+
+{% block body %}
+	<div class="page">
+		<h2>Données enregistrées</h2>
+		<p> Votre réponse à bien étée enregistrée. merci pour votre participation</p>
+		<form>
+			<input type="button" value="Retour à l'accueil" onclick="window.location.href='{{ path('surveys_ssc2016_homepage') }}'" />
+		</form> 
+	</div>
+{% endblock %}

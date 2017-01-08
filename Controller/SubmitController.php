@@ -5,6 +5,8 @@ namespace Surveys\SSC2016Bundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use Surveys\SSC2016Bundle\Entity\Results;
+
 class SubmitController extends Controller
 {
 
@@ -18,15 +20,26 @@ class SubmitController extends Controller
     {
     	//Générer les données
     	$data = array();
-        $valeursOk = false;
-        $results = $this->verifData();
+        $data["errorType"] = '';
+        $results = $this->convertData();
         
-        if($results != null)
-            $valeursOk = true;
+        if(!$results->isValid())
+            $data["errorType"] = "missingFields";
+        else{
 
+            try {
+                //Enregistrement dans la base de données
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($results);
+                $em->flush();
+            } catch (Exception $e) {
+                //Gestion d'éventuelles erreurs innatendues
+                $data["errorType"] = "dbError";
+            }
+        }
 
         //effectuer le rendu de la page
-        if(!$valeursOk)
+        if($data["errorType"] != '')
             $response = $this->render('SurveysSSC2016Bundle:Submit:failed-fr.html.twig', $data);
         else
             $response = $this->render('SurveysSSC2016Bundle:Submit:worked-fr.html.twig', $data);
@@ -37,88 +50,44 @@ class SubmitController extends Controller
 
 
     /**
-     * Vérifie lé présence et la validité de toutes les données
-     * Place ces dernières dans un tableau associatif bidimentionel
+     * place les données dans un objet Result
      *
-     * @return     <array>  ( Résultats; null si non valide )
+     * @return     <Result>  ( objet resultat )
      */
-    public function verifData(){
-        //nommage des paramètres requis
-        $pagesResult = array();
-        $pagesResult["IT"] = array(
-            'it-responsiveness' => '',
-            'it-courtesy' => '',
-            'it-solutions' => '',
-            'it-issuesHandeling' => '',
-            'it-global' => '',
-            'it-improve' => '',
-            'it-comm' => '',
-            'it-system' => '',
-            'it-secu' => '');
-        $pagesResult["HA"] = array(
-            'ha-offerCall' => '',
-            'ha-nego' => '',
-            'ha-contractFollowUp' => '',
-            'ha-infoBuying' => '',
-            'ha-infoSupplier' => '');
-        $pagesResult["Compta"] = array(
-            'compta-cerAnswer' => '',
-            'compta-timeAnswer' => '',
-            'compta-immo' => '',
-            'compta-rules' => '',
-            'compta-timeBill' => '',
-            'compta-receivables' => '',
-            'compta-who' => '');
-        $pagesResult["Gestion"] = array(
-            'gestion-mission' => '',
-            'gestion-who' => '',
-            'gestion-answers' => '',
-            'gestion-global' => '');
+    public function convertData(){
 
+        //instanciation de l'objet
+        $results = new Results();
 
+        //ajout des données dans l'objet
         $request = Request::createFromGlobals();
+        $results->setItResponsiveness($request->request->get('it_responsiveness'));
+        $results->setItCourtesy($request->request->get('it_courtesy'));
+        $results->setItSolutions($request->request->get('it_solutions'));
+        $results->setItIssuesHandeling($request->request->get('it_issuesHandeling'));
+        $results->setItGlobal($request->request->get('it_global'));
+        $results->setItImprove($request->request->get('it_improve'));
+        $results->setItComm($request->request->get('it_comm'));
+        $results->setItSystem($request->request->get('it_system'));
+        $results->setItSecu($request->request->get('it_secu'));
+        $results->setHaOfferCall($request->request->get('ha_offerCall'));
+        $results->setHaNego($request->request->get('ha_nego'));
+        $results->setHaContractFollowUp($request->request->get('ha_contractFollowUp'));
+        $results->setHaInfoBuying($request->request->get('ha_infoBuying'));
+        $results->setHaInfoSupplier($request->request->get('ha_infoSupplier'));
+        $results->setComptaCerAnswer($request->request->get('compta_cerAnswer'));
+        $results->setComptaTimeAnswer($request->request->get('compta_timeAnswer'));
+        $results->setComptaImmo($request->request->get('compta_immo'));
+        $results->setComptaRules($request->request->get('compta_rules'));
+        $results->setComptaTimeBill($request->request->get('compta_timeBill'));
+        $results->setComptaReceivables($request->request->get('compta_receivables'));
+        $results->setComptaWho($request->request->get('compta_who'));
+        $results->setGestionMission($request->request->get('gestion_mission'));
+        $results->setGestionWho($request->request->get('gestion_who'));
+        $results->setGestionAnswers($request->request->get('gestion_answers'));
+        $results->setGestionGlobal($request->request->get('gestion_global'));
 
-        foreach ($pagesResult as $aPage => $someResults) {
-            foreach ($someResults as $anIndex => $aValue) {
-                //vérification de l'existance de la valeur
-                if ($request->request->get($anIndex) == null)
-                    return null;
 
-                $provValue = $request->request->get($anIndex);
-
-                //vérification de la validité de la valeur
-                switch ($anIndex) {
-                    case 'it-improve':
-                        if($provValue == '')
-                            return null;
-                        break;
-                    
-                    default:
-                        if(!$this->fiveRadioCheck($provValue))
-                            return null;
-                        break;
-                }
-                $pagesResult[$aPage][$anIndex] = $provValue;
-            }
-        }
-
-        return $pagesResult;
-    }
-
-    /**
-     * Vérifie la validité du résultat d'une radioBox à cinq options;
-     *
-     * @param      <string>  $pValue  le résultat de la radioBox
-     *
-     * @return     <bool>  ( facteur de validité )
-     */
-    public function fiveRadioCheck($pValue){
-        $possibleValues = array('-1', '0', '1', '2', '3');
-        foreach ($possibleValues as $aPossibleValue) {
-            if($pValue == $aPossibleValue)
-                return true;
-        }
-
-        return false;
+        return $results;
     }
 }
