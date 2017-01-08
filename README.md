@@ -37,6 +37,7 @@ Installation (effectuée sous Debian 8 Jessie)
 10. $ Déplacez-vous dans ce dernier
 * Si vous ne disposez pas du paquet git vous pouvez ignorer l'étape suivante, télécharger l'archive sur github.com et l'extraire à la main dans le répertoire à crées: SSC2016Bundle
 11. $ git clone https://github.com/paccalin/Symfony-SSC2016Bundle SSC2016Bundle
+12. 
 ...
 surveys_ssc2016:
     resource: "@SurveysSSC2016Bundle/Resources/config/routing.yml"
