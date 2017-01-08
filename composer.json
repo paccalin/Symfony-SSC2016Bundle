@@ -23,7 +23,7 @@
             "type": "package",
             "package": {
                 "name": "survey/ssc2016bundle",
-                "version": "dev-master",
+                "version": "master",
                 "source": {
                     "url": "git://github.com/paccalin/Symfony-SSC2016Bundle.git",
                     "type": "git",
