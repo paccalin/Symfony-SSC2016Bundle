@@ -1,7 +1,20 @@
 # Symfony-SSC2016Bundle
-INFO
+INFO:
 --------------------------------
-Ceci est un formulaire pour L'entreprise Tecumseh Europe Développ" dans le cadre d'un test d'admission à un stage.
+Ceci est un formulaire sous forme de bundle symfony développé pour l'entreprise Tecumseh Europe dans le cadre d'un test d'admission à un stage.
+--------------------------------
+
+Requirements:
+--------------------------------
+-symfony 3.2
+-apache2
+-PHP 5.5
+-mysql-server
+--------------------------------
+
+Compatibilité:
+--------------------------------
+-Firefox
 --------------------------------
 
 
