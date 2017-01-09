@@ -2,6 +2,7 @@
     "name" : "survey/ssc2016bundle",
     "description" : "Bundle d'enquête SSC2016",
     "type" : "symfony-bundle",
+    "version": "1.0.0",
     "license": "MIT",
     "authors" : [
         {
