@@ -22,5 +22,5 @@
     "autoload": {
         "psr-0": { "Surveys\\SSC2016": "" }
     },
-    "target-dir": "Surveys/SSC2016"
+    "target-dir": "survey/ssc2016bundle/Surveys/SSC2016"
 }
