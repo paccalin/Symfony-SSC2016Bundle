@@ -15,7 +15,8 @@
         "symfony/symfony": ">=3.2",
         "twig/twig": "*",
         "doctrine/orm": "*",
-        "doctrine/doctrine-bundle": "*"
+        "doctrine/doctrine-bundle": "*",
+        "doctrine/doctrine-cache-bundle": "*"
     },
     "autoload": {
         "psr-0": { "Surveys\\SSC2016": "" }
