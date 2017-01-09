@@ -17,7 +17,8 @@
         "twig/twig": "*",
         "doctrine/orm": "*",
         "doctrine/doctrine-bundle": "*",
-        "doctrine/doctrine-cache-bundle": "*"
+        "doctrine/doctrine-cache-bundle": "*",
+        "symfony/assetic-bundle": "*"
     },
     "autoload": {
         "psr-0": { "Surveys\\SSC2016Bundle" : "" }
