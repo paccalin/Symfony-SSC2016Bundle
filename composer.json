@@ -20,7 +20,7 @@
         "doctrine/doctrine-cache-bundle": "*"
     },
     "autoload": {
-        "psr-0": { "Surveys\\SSC2016Bundle": "" }
+        "psr-0": { "Surveys\\SSC2016Bundle" : "" }
     },
-    "target-dir": "Surveys/SSC2016"
+    "target-dir": "Surveys/SSC2016Bundle"
 }
