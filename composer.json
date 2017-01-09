@@ -1,43 +1,25 @@
 {
     "name" : "survey/ssc2016bundle",
-    "description" : "bundle d'enquête SSC2016",
+    "description" : "Bundle d'enquête SSC2016",
     "type" : "symfony-bundle",
-    "authors" : [{
-        "name" : "Axel Paccalin",
-        "email" : "paccalin.axel@gmail.com"
-    }],
-    "autoload": {
-        "psr-4": { "": "src/" },
-        "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
-    },
-    "keywords" : [
-        "SSC2016 bundle"
+    "license": "MIT",
+    "authors" : [
+        {
+            "name" : "Axel Paccalin",
+            "email" : "paccalin.axel@gmail.com",
+            "homepage": "http://paccalin-axel.com"
+        }
     ],
     "require": {
         "php": ">=5.5.9",
-        "symfony/symfony": "3.2",
-        "doctrine/orm": "^2.5",
-        "doctrine/doctrine-bundle": "^1.6",
-        "doctrine/doctrine-cache-bundle": "^1.2"
+        "symfony/symfony": ">=3.2",
+        "twig/twig": "*",
+        "doctrine/orm": "*",
+        "doctrine/doctrine-bundle": "*",
+        "doctrine/doctrine-cache-bundle": "*"
     },
-    "target-dir" : "Survey/SSC2016Bundle",
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "survey/ssc2016bundle",
-                "version": "master",
-                "source": {
-                    "url": "git://github.com/paccalin/Symfony-SSC2016Bundle.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0" : {
-                        "Survey\\SSC2016Bundle" : "src"
-                    }
-                }
-            }
-        }
-    ]
+    "autoload": {
+        "psr-0": { "Surveys\\SSC2016": "" }
+    },
+    "target-dir": "Surveys/SSC2016"
 }
