@@ -1,5 +1,5 @@
 {
-    "name" : "survey/ssc2016bundle",
+    "name" : "surveys/ssc2016bundle",
     "description" : "Bundle d'enquête SSC2016",
     "type" : "symfony-bundle",
     "version": "1.0.0",
@@ -20,7 +20,7 @@
         "doctrine/doctrine-cache-bundle": "*"
     },
     "autoload": {
-        "psr-0": { "Surveys\\SSC2016": "" }
+        "psr-0": { "Surveys\\SSC2016Bundle": "" }
     },
-    "target-dir": "survey/ssc2016bundle/Surveys/SSC2016"
+    "target-dir": "Surveys/SSC2016"
 }
